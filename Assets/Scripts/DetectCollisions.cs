@@ -16,7 +16,14 @@ public class DetectCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        Destroy(gameObject);
-        Destroy(collider.gameObject);
+        if (collider.tag == "PlayerHostileProjectile")
+        {
+            Destroy(gameObject);
+            Destroy(collider.gameObject);
+        }
+        else if (collider.tag == "Player")
+        {
+            Debug.Log("Enemy hit the player!");
+        }
     }
 }
