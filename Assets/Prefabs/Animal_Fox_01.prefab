@@ -512,7 +512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimalHealth
   maxHealth: 2
   currentHealth: 0
-  healthFill: {fileID: 7324163533084636357}
+  healthSlider: {fileID: 5521776521493354623}
   healthCanvas: {fileID: 3160650658380257500}
 --- !u!1 &4923538390124382407
 GameObject:
@@ -1417,6 +1417,17 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 3745535168831219043, guid: 80dd485050933184591f227f50dbf750, type: 3}
   m_PrefabInstance: {fileID: 1740134806457875903}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5521776521493354623 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6090970193289471424, guid: 80dd485050933184591f227f50dbf750, type: 3}
+  m_PrefabInstance: {fileID: 1740134806457875903}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!114 &7324163533084636357 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9043954342177524090, guid: 80dd485050933184591f227f50dbf750, type: 3}

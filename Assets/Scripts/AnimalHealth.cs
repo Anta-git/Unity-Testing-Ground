@@ -3,18 +3,22 @@ using UnityEngine.UI;
 
 public class AnimalHealth : MonoBehaviour
 {
+    private GameManager gameManager;
+
     [Header("Health")]
     public float maxHealth = 5f;
     public float currentHealth = 0f;
 
     [Header("UI")]
-    public Image healthFill;
+    public Slider healthSlider;
     public Canvas healthCanvas;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = currentHealth;
+        healthSlider.fillRect.gameObject.SetActive(false);
         healthCanvas = GetComponentInChildren<Canvas>();
-        healthFill = healthCanvas.gameObject.GetComponentInChildren<Image>();
         UpdateHealthBar();
     }
 
@@ -30,8 +34,8 @@ public class AnimalHealth : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        
-        healthFill.fillAmount = currentHealth / maxHealth;
+        healthSlider.fillRect.gameObject.SetActive(true);
+        healthSlider.value = currentHealth;
     }
 
     public void HealAnimal(float amount)
