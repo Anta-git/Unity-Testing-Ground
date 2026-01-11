@@ -19,9 +19,17 @@ public class DetectCollisions : MonoBehaviour
     {
         if (collider.tag == "PlayerHostileProjectile")
         {
-            gameManager.AddScore(1);
-            Destroy(gameObject);
-            Destroy(collider.gameObject);
+            AnimalHealth animalHealth = gameObject.GetComponent<AnimalHealth>();
+            animalHealth.HealAnimal(1f);
+
+            if(animalHealth.currentHealth == animalHealth.maxHealth)
+            {
+                gameManager.AddScore(1);
+                Destroy(gameObject);
+                Destroy(collider.gameObject);
+            }
+
+
         }
         else if (collider.tag == "Player")
         {
